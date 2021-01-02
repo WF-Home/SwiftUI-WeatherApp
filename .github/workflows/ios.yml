@@ -1,0 +1,21 @@
+name: iOS
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+
+    runs-on: macos-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Install Bundler
+      run: gem install bundler:1.17.2
+    - name: Install Bundle
+      run: bundle install
+    - name: Execute Fastlane
+      run: bundle exec fastlane unit_tests
