@@ -1,0 +1,32 @@
+{
+  "configurations" : [
+    {
+      "id" : "7698869F-F3FA-4305-A768-B8B9EEE50088",
+      "name" : "Configuration 1",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "targetForVariableExpansion" : {
+      "containerPath" : "container:SwiftUI-WeatherApp.xcodeproj",
+      "identifier" : "D9267DC025A05A54006F8908",
+      "name" : "SwiftUI-WeatherApp (iOS)"
+    },
+    "testExecutionOrdering" : "random"
+  },
+  "testTargets" : [
+    {
+      "skippedTests" : [
+        "SwiftUI_WeatherAppTests"
+      ],
+      "target" : {
+        "containerPath" : "container:SwiftUI-WeatherApp.xcodeproj",
+        "identifier" : "D933679F25A0B0AB00144AE5",
+        "name" : "SwiftUI-WeatherAppTests"
+      }
+    }
+  ],
+  "version" : 1
+}

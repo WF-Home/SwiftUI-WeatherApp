@@ -52,6 +52,7 @@
 		D93367A025A0B0AB00144AE5 /* SwiftUI-WeatherAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "SwiftUI-WeatherAppTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D93367A225A0B0AB00144AE5 /* SwiftUI_WeatherAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUI_WeatherAppTests.swift; sourceTree = "<group>"; };
 		D93367A425A0B0AB00144AE5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D93367D325A0B90200144AE5 /* SwiftUI-WeatherApp.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = "SwiftUI-WeatherApp.xctestplan"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +83,7 @@
 		D9267DB425A05A52006F8908 = {
 			isa = PBXGroup;
 			children = (
+				D93367D325A0B90200144AE5 /* SwiftUI-WeatherApp.xctestplan */,
 				D9267DB925A05A52006F8908 /* Shared */,
 				D9267DC325A05A54006F8908 /* iOS */,
 				D9267DCA25A05A54006F8908 /* macOS */,

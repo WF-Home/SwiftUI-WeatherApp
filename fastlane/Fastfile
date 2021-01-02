@@ -1,0 +1,47 @@
+# This file contains the fastlane.tools configuration
+# You can find the documentation at https://docs.fastlane.tools
+#
+# For a list of all available actions, check out
+#
+#     https://docs.fastlane.tools/actions
+#
+# For a list of all available plugins, check out
+#
+#     https://docs.fastlane.tools/plugins/available-plugins
+#
+
+# Uncomment the line if you want fastlane to automatically update itself
+# update_fastlane
+
+default_platform(:ios)
+
+platform :ios do
+  
+  desc "Runs Unit Tests"
+
+  lane :unit_tests do
+    build_test
+    run_tests
+  end
+
+  lane :build_test do
+    scan(
+      project: "SwiftUI-WeatherApp.xcodeproj",
+      build_for_testing: true,
+      scheme: "SwiftUI-WeatherApp (iOS)",
+      derived_data_path: "build",
+      xcargs: "-quiet"
+    )
+  end
+
+  lane :run_tests do
+    scan(
+      project: "SwiftUI-WeatherApp.xcodeproj",
+      test_without_building: true,
+      scheme: "SwiftUI-WeatherApp (iOS)",
+      testplan: "SwiftUI-WeatherApp",
+      derived_data_path: "build"
+    )
+  end
+
+end
