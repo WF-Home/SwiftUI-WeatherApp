@@ -1,0 +1,13 @@
+# Check out https://docs.codemagic.io/getting-started/building-a-native-ios-app/ for more information
+# Please review and update values in curly braces
+
+workflows:
+    ios-app:
+        name: iOS App
+        environment:
+            xcode: latest
+            cocoapods: default
+        scripts:
+            - gem install bundler:1.17.2
+            - bundle install
+            - bundle exec fastlane unit_tests
