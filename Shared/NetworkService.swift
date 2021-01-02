@@ -21,12 +21,12 @@ final class NetworkService {
             .eraseToAnyPublisher()
     }
     
-    func generateURL(city: String) -> URLComponents {
+     private func generateURL(city: String) -> URLComponents {
         
         var components = URLComponents()
         
         components.scheme = "https"
-        components.host = "api.openweather.org"
+        components.host = "api.openweathermap.org"
         components.path = "/data/2.5/weather"
         components.queryItems = [
             URLQueryItem(name: "q", value: city),
