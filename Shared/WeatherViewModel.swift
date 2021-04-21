@@ -8,6 +8,11 @@
 import Foundation
 import Combine
 
+enum temp_type {
+    case fahrenheit
+    case celcius
+}
+
 class WeatherViewModel : ObservableObject {
     
     @Published var weather : Weather?
@@ -20,9 +25,17 @@ class WeatherViewModel : ObservableObject {
         }
     }
     
-    var temperature: String {
+    var temperatureInCelcius: String {
         if let temp = self.weather?.main?.temp {
-            return String(format: "%.0f", temp)
+            return String(format: "%.0f", convertTemperature(temp_type: .celcius, temp: temp))
+        } else {
+            return "--"
+        }
+    }
+    
+    var temperatureInFahrenheit: String {
+        if let temp = self.weather?.main?.temp {
+            return String(format: "%.0f", convertTemperature(temp_type: .fahrenheit, temp: temp))
         } else {
             return "--"
         }
@@ -30,6 +43,15 @@ class WeatherViewModel : ObservableObject {
     
     func updateWeather(weather: Weather) {
         self.weather = weather
+    }
+    
+    private func convertTemperature(temp_type: temp_type, temp: Float) -> Float {
+        switch temp_type {
+            case .fahrenheit:
+                return ((temp - 273.15) * 9/5 + 32)
+            case .celcius:
+                return (temp - 273.15)
+        }
     }
     
     

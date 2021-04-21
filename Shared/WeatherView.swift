@@ -1,5 +1,5 @@
 //
-//  ContentView.swift
+//  WeatherView.swift
 //  Shared
 //
 //  Created by Wiljay Flores on 2021-01-02.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct WeatherView: View {
     
     @ObservedObject var weatherVM : WeatherViewModel
     let request = RequestManager()
@@ -20,7 +20,7 @@ struct ContentView: View {
     var body: some View {
         VStack {
             Text("\(weatherVM.city)")
-            Text("\(weatherVM.temperature)")
+            Text("\(weatherVM.temperatureInCelcius)")
         }
     }
     
@@ -31,7 +31,7 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        WeatherView()
     }
 }
 

@@ -32,19 +32,18 @@ class WeatherViewModelUnitTests: XCTestCase {
         XCTAssertEqual(modelToTest.city, "toronto")
     }
     
-    func testTemperature() throws {
-        XCTAssertEqual(modelToTest.temperature, String(format: "%.0f", 13.00))
-    }
-    
     func testCityNameWhenNil() throws {
         modelToTest.weather = nil
         XCTAssertEqual(modelToTest.city, "----")
         
     }
     
-    func testTemperatureWhenNil() throws {
-        modelToTest.weather = nil
-        XCTAssertEqual(modelToTest.temperature, "--")
+    func testCelcius() throws {
+        XCTAssertEqual(modelToTest.temperatureInCelcius, "-260")
+    }
+    
+    func testFahrenheit() throws {
+        XCTAssertEqual(modelToTest.temperatureInFahrenheit, "-436")
     }
 
 }
